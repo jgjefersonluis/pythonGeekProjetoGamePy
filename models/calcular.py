@@ -8,7 +8,7 @@ class Calcular:
         self.__valor1: int = self._gerar_valor
         self.__valor2: int = self._gerar_valor
         self.__operacao: int = randint(1, 3) # 1 = somar, 2 = diminuir, 3 = multiplicar
-        self.__resultado: int = self._gerar_resultado
+        self.__resultado: int = self._gerar_valor
 
     @property
     def dificuldade(self: object) -> int:
@@ -33,13 +33,13 @@ class Calcular:
     @property
     def _gerar_valor(self: object) -> int:
         if self.dificuldade == 1:
-            return randint(0,10)
+            return randint(0, 10)
         elif self.dificuldade == 2:
-            return randint(0,1000)
+            return randint(0, 1000)
         elif self.dificuldade == 3:
-            return randint(0, 100)
-        elif self.dificuldade == 4:
             return randint(0, 10000)
+        elif self.dificuldade == 4:
+            return randint(0, 100000)
         else:
             return randint(0, 100000)
 
@@ -61,7 +61,7 @@ class Calcular:
         else:
             return '*'
 
-    def chacar_resultado(self: object, resposta: int) -> bool:
+    def checar_resultado(self: object, resposta: int) -> bool:
         certo: bool = False
 
         if self.resultado == resposta:
